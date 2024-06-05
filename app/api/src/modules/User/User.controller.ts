@@ -3,12 +3,27 @@ import { AuthRequest } from "../../middleware/auth/authMiddleware";
 import UserModel from "./User.model";
 import bcrypt from "bcryptjs";
 
-const login = (req: Request, res: Response, next: NextFunction) => {
-  const { user } = req as AuthRequest;
+const login = async (req: Request, res: Response, next: NextFunction) => {
+  const { email, password } = req.body;
 
-  res.json({
-    token: user.generateToken(),
-  });
+  try {
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    res.json({
+      token: user.generateToken(),
+      role: user.role,
+    });
+  } catch (error) {
+    next(error);
+  }
 };
 
 const getCurrentUser = (req: Request, res: Response, next: NextFunction) => {
@@ -16,12 +31,11 @@ const getCurrentUser = (req: Request, res: Response, next: NextFunction) => {
   res.json(user);
 };
 
-const updateUser = async (req: Request, res: Response) => {
+const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.params.id;
     const updateData = req.body;
 
-    // If the update includes a password, hash it before updating > fix later
     if (updateData.password) {
       const salt = await bcrypt.genSalt(10);
       updateData.password = await bcrypt.hash(updateData.password, salt);
@@ -37,12 +51,20 @@ const updateUser = async (req: Request, res: Response) => {
 
     res.status(200).send(updatedUser);
   } catch (error) {
-    res.status(500).send({ message: "Error updating user" });
+    next(error);
   }
 };
 
 const register = async (req: Request, res: Response, next: NextFunction) => {
-  const { firstName, lastName, email, password, role, phone_number } = req.body;
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    role,
+    phone_number,
+    brandName,
+  } = req.body;
 
   const user = new UserModel({
     firstName,
@@ -51,6 +73,7 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
     password,
     role,
     phone_number,
+    brandName,
   });
 
   try {
@@ -63,38 +86,7 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-//keep for later
-// const getDashboard = async (
-//   req: Request,
-//   res: Response,
-//   next: NextFunction
-// ) => {
-//   try {
-//     const { user } = req as AuthRequest;
-
-//     // how many notes?
-//     const notes = await NoteModel.countDocuments({ ownerId: user._id });
-//     // how many trips?
-//     const trips = await TripModel.countDocuments({ ownerId: user._id });
-//     //how many activities?
-//     const activities = await ActivityModel.countDocuments({
-//       ownerId: user._id,
-//     });
-//     //how many expenses?
-//     const expenses = await ExpenseModel.countDocuments({ ownerId: user._id });
-
-//     res.json({
-//       notes,
-//       trips,
-//       activities,
-//       expenses,
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// };
-
-const deleteUser = async (req: Request, res: Response) => {
+const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.params.id;
     const { user } = req as AuthRequest;
@@ -113,9 +105,46 @@ const deleteUser = async (req: Request, res: Response) => {
 
     res.status(200).send({ message: "User deleted successfully" });
   } catch (error) {
-    console.log("Delete user error", error);
-    res.status(500).send({ message: "Error deleting user" });
+    next(error);
   }
 };
 
-export { login, getCurrentUser, register, updateUser, deleteUser };
+const getAllBrands = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const brands = await UserModel.find({ role: "seller" }).select("brandName");
+    res.json(brands.map((brand) => brand.brandName));
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getUserByBrandName = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { brandName } = req.params;
+    const user = await UserModel.findOne({ brandName });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export {
+  login,
+  getCurrentUser,
+  register,
+  updateUser,
+  deleteUser,
+  getAllBrands,
+  getUserByBrandName,
+};

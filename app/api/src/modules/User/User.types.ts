@@ -12,7 +12,9 @@ export type User = Document &
     password: string;
     firstName: string;
     lastName: string;
+    role: "seller" | "user";
     avatar: string;
     bio: string;
     phone_number: string;
+    brandName: string;
   };

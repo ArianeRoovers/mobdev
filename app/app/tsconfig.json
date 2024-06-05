@@ -23,9 +23,12 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@core/*": ["./src/core/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@assets/*": ["./src/assets/*"],
       "@styles/*": ["./src/style/*"]
-    }
+    },
+    /* JSX */
+    "jsx": "react"
   },
   "include": ["src"]
 }

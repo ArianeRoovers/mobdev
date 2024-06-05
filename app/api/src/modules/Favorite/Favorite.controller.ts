@@ -9,6 +9,12 @@ const addFavorite = async (req: Request, res: Response, next: NextFunction) => {
     const { productId } = req.body;
     const userId = (req as AuthRequest).user._id;
 
+    const existingFavorite = await FavoriteModel.findOne({ userId, productId });
+
+    if (existingFavorite) {
+      return res.status(400).json({ message: "Favorite already exists" });
+    }
+
     const favorite = new FavoriteModel({ userId, productId });
     await favorite.save();
 
@@ -25,10 +31,13 @@ const removeFavorite = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const { productId } = req.body;
     const userId = (req as AuthRequest).user._id;
 
-    const favorite = await FavoriteModel.findOneAndDelete({ _id: id, userId });
+    const favorite = await FavoriteModel.findOneAndDelete({
+      userId,
+      productId,
+    });
 
     if (!favorite) {
       throw new NotFoundError("Favorite not found");

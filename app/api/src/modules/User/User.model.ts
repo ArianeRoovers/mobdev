@@ -29,6 +29,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       enum: ["seller", "user"],
     },
+    brandName: {
+      type: String,
+      required: function (this: User): boolean {
+        return this.role === "seller";
+      },
+    },
     avatar: {
       type: String,
       required: false,

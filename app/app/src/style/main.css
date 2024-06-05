@@ -1,0 +1,50 @@
+/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 83vh;
+}
+
+.content-wrap {
+  flex: 1;
+  padding-bottom: 4rem; /* Make space for the footer */
+}
+
+.footer {
+  background-color: #fee2e2; /* Tailwind bg-pink-100 equivalent */
+  padding: 1rem; /* Tailwind p-4 equivalent */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ccc; /* Optional: Add a top border to separate footer */
+  width: 100%;
+}
+
+.nav {
+  margin-left: 1.5rem; /* Tailwind ml-6 equivalent */
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem; /* Tailwind space-x-4 equivalent */
+  list-style: none;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Global link styling */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}

@@ -2,17 +2,24 @@ import { Router } from "express";
 import {
   createProduct,
   deleteProduct,
-  getProductDetail,
   getProducts,
+  getProductById,
   updateProduct,
+  getProductsByCategory,
+  searchProducts,
+  getProductsByBrand,
 } from "./Product.controller";
+import { authJwt } from "../../middleware/auth/authMiddleware";
 
 const router: Router = Router();
 
 router.get("/products", getProducts);
-router.get("/products/:id", getProductDetail);
-router.post("/products", createProduct);
-router.patch("/products/:id", updateProduct);
-router.delete("/products/:id", deleteProduct);
+router.get("/products/search", searchProducts);
+router.get("/products/:category", getProductsByCategory);
+router.get("/product/:id", getProductById);
+router.post("/products", authJwt, createProduct);
+router.patch("/products/:id", authJwt, updateProduct);
+router.delete("/products/:id", authJwt, deleteProduct);
+router.get('/products/brand/:brandName', getProductsByBrand);
 
 export default router;

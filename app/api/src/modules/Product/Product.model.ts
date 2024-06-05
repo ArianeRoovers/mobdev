@@ -21,10 +21,19 @@ const productSchema = new mongoose.Schema<Product>(
       type: Number,
       required: true,
     },
-    categoryId: {
-      type: mongoose.Schema.Types.ObjectId,
+    category: {
+      type: String,
       required: true,
-      ref: "ProductCategory",
+      enum: ["Haircare", "Skincare", "Make-up", "Tools", "Other"],
+    },
+    brandName: {
+      type: String,
+      required: true,
+    },
+    stock: {
+      type: Number,
+      required: true,
+      min: 0,
     },
   },
   {
