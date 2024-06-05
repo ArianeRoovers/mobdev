@@ -133,7 +133,9 @@ const Profile: React.FC = () => {
                             </h3>
                             <p className={styles.orderDate}>
                               Order Date:{" "}
-                              {new Date(order.createdAt!).toLocaleDateString()}
+                              {order.createdAt
+                                ? new Date(order.createdAt).toLocaleDateString()
+                                : "Unknown"}
                             </p>
                             <p className={styles.orderTotal}>
                               Total: €{order.total.toFixed(2)}
@@ -141,7 +143,7 @@ const Profile: React.FC = () => {
                             <h4 className={styles.itemsTitle}>Items:</h4>
                             <ul className={styles.itemsList}>
                               {order.items.map((item) =>
-                                item ? (
+                                item && item.productId ? (
                                   <li
                                     key={item.productId._id}
                                     className={styles.item}
@@ -156,7 +158,11 @@ const Profile: React.FC = () => {
                                       Price: €{item.price.toFixed(2)}
                                     </p>
                                   </li>
-                                ) : null
+                                ) : (
+                                  <li className={styles.item}>
+                                    Item has been deleted from store
+                                  </li>
+                                )
                               )}
                             </ul>
                           </li>
