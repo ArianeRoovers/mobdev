@@ -1,0 +1,149 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.header {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fee2e2;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar a,
+.sidebar button {
+  background: #fee2e2;
+  color: white;
+  border: none;
+  padding: 12px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+  background: #f6c1c1;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent h2 {
+  border-bottom: 2px solid #fee2e2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.productList,
+.messageList,
+.orderList {
+  list-style: none;
+  padding: 0;
+}
+
+.productItem,
+.messageItem,
+.orderItem {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.productItem h3,
+.orderItem h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #f6c1c1;
+}
+
+button,
+.mainContent a {
+  background: #fee2e2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+button:hover,
+.mainContent a:hover {
+  background: #f6c1c1;
+}
+
+.productDetails {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Ensure all action buttons have the same size and padding */
+.actionButton {
+  display: inline-block;
+  background: #fee2e2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+  font-size: 16px;
+  text-align: center; /* Ensure text is centered */
+  width: 100px; /* Set a fixed width to ensure consistency */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.actionButton:hover {
+  background: #f6c1c1;
+}

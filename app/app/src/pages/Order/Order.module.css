@@ -1,0 +1,98 @@
+.orderContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8d6dd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orderHeader {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.orderHeader h2 {
+  color: #8a4b5b;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.orderHeader p {
+  color: #8a4b5b;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.orderHeader h3 {
+  color: #8a4b5b;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.orderDetails {
+  margin-bottom: 20px;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.itemImagePlaceholder {
+  width: 80px; /* Increased width */
+  height: 80px; /* Increased height */
+  background-color: #f0f0f0;
+  margin-right: 20px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.itemName {
+  font-size: 1em;
+  color: #8a4b5b;
+  margin-bottom: 5px;
+}
+
+.itemBrand {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.itemQuantity {
+  font-size: 1em;
+  color: #8a4b5b;
+  margin-bottom: 5px;
+}
+
+.itemPrice {
+  font-size: 1em;
+  color: #8a4b5b;
+}
+
+.orderSummary {
+  font-size: 1.2em;
+  color: #8a4b5b;
+}
+
+.orderSummary p {
+  margin: 5px 0;
+}

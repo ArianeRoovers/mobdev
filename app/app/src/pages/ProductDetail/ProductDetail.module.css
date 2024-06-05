@@ -1,0 +1,118 @@
+.productDetailContainer {
+  padding: 20px;
+}
+
+.backButton {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #fee2e2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productDetail {
+  display: flex;
+  gap: 20px;
+}
+
+.imageGallery {
+  display: flex;
+  gap: 10px;
+}
+
+.mainImage {
+  width: 400px;
+  height: 400px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.thumbnailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.productInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productTitle {
+  font-size: 2em;
+  margin: 0;
+}
+
+.productPrice {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #e91e63;
+  margin: 0;
+}
+
+.productBrand {
+  font-style: italic;
+  color: #555;
+}
+
+.productDescription {
+  font-size: 1.2em;
+}
+
+.soldOut {
+  color: red;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.addToCartButton,
+.contactSellerButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px; /* Adjust the width as needed */
+}
+
+.addToCartButton {
+  background-color: #f7a7a7;
+  color: #fff;
+}
+
+.addToCartButton:hover {
+  background-color: #f6c1c1;
+}
+
+.contactSellerButton {
+  padding: 5px 10px;
+  background-color: #fee2e2;
+  color: #fff;
+}
+
+.contactSellerButton:hover {
+  background-color: #218838;
+}

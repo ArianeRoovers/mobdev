@@ -1,0 +1,102 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.conversations {
+  display: flex;
+  flex-direction: row;
+}
+
+.conversationList {
+  flex: 1;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.conversationList h2 {
+  margin-bottom: 10px;
+}
+
+.conversationList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.conversationList li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.conversationList li:hover,
+.conversationList li.activeConversation {
+  background-color: #f0f0f0;
+}
+
+.conversationDetail {
+  flex: 3;
+  padding-left: 20px;
+}
+
+.messageList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.messageItem {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.messageInputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.sendMessageButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.sendMessageButton:hover {
+  background-color: #0056b3;
+}
+
+.messageItem {
+  /* common styles for all messages */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.userMessage {
+  background-color: #d0a8e9; /* light green */
+  text-align: right;
+}
+
+.sellerMessage {
+  background-color: #ffaab1; /* light red */
+  text-align: left;
+}

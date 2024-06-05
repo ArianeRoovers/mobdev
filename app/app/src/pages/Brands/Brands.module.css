@@ -1,0 +1,33 @@
+/* src/pages/Brands/Brands.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.brandList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.brandItem {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  color: #555;
+}
+
+.brandItem:hover {
+  background-color: #f1f1f1;
+}
