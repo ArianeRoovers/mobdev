@@ -89,10 +89,9 @@ const SellerMessages: React.FC = () => {
         content,
       };
       await createMessage(messageBody);
-      alert("Message sent!");
+      // alert("Message sent!");
       setContent("");
 
-    
       const messagesResponse = await getMessagesByUser(user._id);
       const messagesData = messagesResponse.data;
 

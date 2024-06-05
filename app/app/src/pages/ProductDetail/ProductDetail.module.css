@@ -95,7 +95,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 150px; /* Adjust the width as needed */
+  width: 150px;
 }
 
 .addToCartButton {
@@ -114,5 +114,5 @@
 }
 
 .contactSellerButton:hover {
-  background-color: #218838;
+  background-color: #f6c1c1;
 }

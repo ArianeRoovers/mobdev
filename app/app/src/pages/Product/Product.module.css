@@ -75,3 +75,9 @@
 .addToCartButton:hover {
   background-color: #f6c1c1;
 }
+
+.soldOut {
+  font-weight: bold;
+  color: red;
+  margin-top: 10px;
+}

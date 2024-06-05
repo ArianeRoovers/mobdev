@@ -1,37 +1,37 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem; /* Tailwind p-4 equivalent */
+  padding: 1rem;
 }
 
 .banner {
-  background-color: #e5e7eb; /* Tailwind bg-gray-200 equivalent */
-  height: 16rem; /* Tailwind h-64 equivalent */
+  background-color: #e5e7eb;
+  height: 16rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .bannerText {
-  font-size: 1.875rem; /* Tailwind text-3xl equivalent */
+  font-size: 1.875rem;
 }
 
 .discoverButton {
-  background-color: #fbcfe8; /* Tailwind bg-pink-200 equivalent */
-  padding: 0.5rem 1rem; /* Tailwind px-4 py-2 equivalent */
-  border-radius: 9999px; /* Tailwind rounded-full equivalent */
-  margin-top: 2rem; /* Tailwind mt-8 equivalent */
+  background-color: #fbcfe8;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-top: 2rem;
 }
 
 .circlesContainer {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem; /* Tailwind mt-8 equivalent */
+  margin-top: 2rem;
 }
 
 .circle {
-  width: 6rem; /* Tailwind w-24 equivalent */
-  height: 6rem; /* Tailwind h-24 equivalent */
-  background-color: #d1d5db; /* Tailwind bg-gray-300 equivalent */
-  border-radius: 9999px; /* Tailwind rounded-full equivalent */
+  width: 6rem;
+  height: 6rem;
+  background-color: #d1d5db;
+  border-radius: 9999px;
 }

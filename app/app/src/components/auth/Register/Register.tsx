@@ -11,10 +11,6 @@ const Register: React.FC = () => {
   const [role, setRole] = useState("user");
   const navigate = useNavigate();
 
-  const handlePasswordGenerated = (newPassword: string) => {
-    setPassword(newPassword);
-  };
-
   const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
@@ -67,7 +63,7 @@ const Register: React.FC = () => {
         <div className={styles.logo}></div>
         {error && <div className={styles.errorView}>{error}</div>}
         <form onSubmit={handleSubmit} className={styles.registerForm}>
-          <h2 className={styles.formTitle}>Registreren</h2>
+          <h2 className={styles.formTitle}>Register</h2>
           <div className={styles.formControl}>
             <label className={styles.formLabel} htmlFor="role">
               Role
@@ -157,7 +153,7 @@ const Register: React.FC = () => {
               disabled={isLoading}
               required
             />
-            <PasswordGenerator onPasswordGenerated={handlePasswordGenerated} />
+            <PasswordGenerator />
           </div>
           <button
             className={styles.btnPrimary}

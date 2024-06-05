@@ -15,12 +15,9 @@ if (rootElement) {
       <BrowserRouter>
         <CartProvider>
           <AuthProvider>
-            {/* <CartProvider> */}
-            {/* <Search /> */}
             <Header />
             <App />
             <Footer />
-            {/* </CartProvider> */}
           </AuthProvider>
         </CartProvider>
       </BrowserRouter>

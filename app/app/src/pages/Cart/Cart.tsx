@@ -63,8 +63,8 @@ const Cart: React.FC = () => {
   const handleIncreaseQuantity = async (productId: string) => {
     const item = cart.items.find((item) => item.productId._id === productId);
     if (item && item.quantity < item.productId.stock) {
-      increaseItemQuantity(productId);
-      getCart();
+      await increaseItemQuantity(productId);
+      await getCart();
     } else {
       alert("Cannot add more than available stock.");
     }

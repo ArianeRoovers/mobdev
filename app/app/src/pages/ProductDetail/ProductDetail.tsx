@@ -127,7 +127,7 @@ const ProductDetail: React.FC = () => {
               className={styles.favoriteButton}
               onClick={() => handleToggleFavorite(product._id)}
             >
-              {isFavorite ? "❤️" : "🤍"}
+              {isFavorite ? "💖" : "🤍"}
             </button>
           </div>
           <div className={styles.thumbnailContainer}>

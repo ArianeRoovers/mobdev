@@ -51,8 +51,8 @@
 }
 
 .itemImagePlaceholder {
-  width: 80px; /* Increased width */
-  height: 80px; /* Increased height */
+  width: 80px;
+  height: 80px;
   background-color: #f0f0f0;
   margin-right: 20px;
 }

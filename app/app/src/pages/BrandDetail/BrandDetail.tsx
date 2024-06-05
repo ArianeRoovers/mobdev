@@ -152,7 +152,7 @@ const BrandDetail: React.FC = () => {
                     className={styles.favoriteButton}
                     onClick={() => handleToggleFavorite(product._id)}
                   >
-                    {favorites.has(product._id) ? "❤️" : "🤍"}
+                    {favorites.has(product._id) ? "💖" : "🤍"}
                   </button>
                 </>
               )}

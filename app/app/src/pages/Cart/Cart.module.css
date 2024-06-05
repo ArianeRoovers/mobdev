@@ -16,7 +16,7 @@
 
 .cartItems {
   flex: 2;
-  margin-right: 40px; /* Increased the gap between the two containers */
+  margin-right: 40px;
   max-width: 50%;
 }
 
@@ -146,7 +146,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Center content vertically */
+  height: 80vh;
   text-align: center;
 }
 

@@ -31,7 +31,7 @@ function App() {
     <div className="app-container">
       <div className="content-wrap">
         {user?.role !== "seller" && <Search />}
-        {/* <Header /> */}
+
         <Routes>
           <Route path={ROUTES.home} element={<Home />} />
           <Route path={ROUTES.brands} element={<Brands />} />
@@ -42,7 +42,7 @@ function App() {
           <Route path={ROUTES.productsByCategory} element={<ProductPage />} />
           <Route path={ROUTES.login} element={<Login />} />
           <Route path={ROUTES.register} element={<Register />} />
-          {/* <Route path={ROUTES.registerSeller} element={<RegisterSeller />} /> */}
+
           <Route path={ROUTES.notFound} element={<Notfound />} />
 
           <Route element={<ProtectedRoute />}>
@@ -60,7 +60,6 @@ function App() {
             <Route path={ROUTES.editProduct} element={<ProductManager />} />
           </Route>
         </Routes>
-        {/* <Footer /> */}
       </div>
     </div>
   );

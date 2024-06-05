@@ -130,18 +130,24 @@ const ProductPage: React.FC = () => {
               <p className={styles.productPrice}>
                 €{product?.price?.toFixed(2)}
               </p>
-              <button
-                className={styles.favoriteButton}
-                onClick={() => handleToggleFavorite(product?._id)}
-              >
-                {favorites.has(product?._id) ? "❤️" : "🤍"}
-              </button>
-              <button
-                className={styles.addToCartButton}
-                onClick={() => handleAddToCart(product?._id)}
-              >
-                Add to Cart
-              </button>
+              {product.stock === 0 ? (
+                <p className={styles.soldOut}>SOLD OUT</p>
+              ) : (
+                <>
+                  <button
+                    className={styles.addToCartButton}
+                    onClick={() => handleAddToCart(product?._id)}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    className={styles.favoriteButton}
+                    onClick={() => handleToggleFavorite(product?._id)}
+                  >
+                    {favorites.has(product?._id) ? "💖" : "🤍"}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         ))}

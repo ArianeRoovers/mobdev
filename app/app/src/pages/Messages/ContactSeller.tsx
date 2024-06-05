@@ -47,7 +47,7 @@ const ContactSeller: React.FC = () => {
       };
       console.log("Sending message:", messageBody);
       await createMessage(messageBody);
-      alert("Message sent!");
+      // alert("Message sent!");
       setContent("");
       navigate("/messages");
     } catch (error) {
@@ -56,14 +56,16 @@ const ContactSeller: React.FC = () => {
   };
 
   return (
-    <div className={styles.contactSeller}>
-      <h2>Contact Seller</h2>
-      <textarea
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Type your message here"
-      />
-      <button onClick={handleSendMessage}>Send Message</button>
+    <div className={styles.contactSellerContainer}>
+      <div className={styles.contactSeller}>
+        <h2>Contact Seller</h2>
+        <textarea
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Type your message here"
+        />
+        <button onClick={handleSendMessage}>Send Message</button>
+      </div>
     </div>
   );
 };
